@@ -21,7 +21,7 @@ applications:
   cert-manager-configuration:
     annotations:
       argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '15'
+      argocd.argoproj.io/sync-wave: '6'
     destination:
       namespace: cert-manager
     source:
@@ -36,11 +36,20 @@ applications:
   openshift-config:
     annotations:
       argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '25'
+      argocd.argoproj.io/sync-wave: '7'
     destination:
       namespace: openshift-config
     source:
-      path: components/openshift-config                 
+      path: components/openshift-config 
+
+  gateway-api:
+    annotations:
+      argocd.argoproj.io/compare-options: IgnoreExtraneous
+      argocd.argoproj.io/sync-wave: '8'
+    destination:
+      namespace: openshift-ingress
+    source:
+      path: components/gateway-api                      
                           
   openshift-servicemesh:
     annotations:
