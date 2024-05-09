@@ -3,7 +3,7 @@ kind: APIServer
 metadata:
   name: cluster
   annotations:
-    argocd.argoproj.io/sync-options: ServerSideApply=true
+    argocd.argoproj.io/sync-options: Delete=false,ServerSideApply=true
 spec:
   servingCerts:
     namedCertificates:

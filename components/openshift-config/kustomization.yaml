@@ -15,7 +15,6 @@ resources:
   - ./admin-role-binding.yaml
   - ./olm-patch.yaml
   - ./admin-group.yaml
-  - ./default-router.yaml
   - ./api-cert-patch.yaml
   - ./cluster-api-certificate.yaml
   - ./cluster-ingress-certificate.yaml
