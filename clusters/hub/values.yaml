@@ -77,3 +77,16 @@ applications:
       namespace: openshift-servicemesh-operator
     source:
       path: components/openshift-servicemesh                          
+
+
+# test
+
+  gateway-api-test:
+    annotations:
+      argocd.argoproj.io/compare-options: IgnoreExtraneous
+      argocd.argoproj.io/sync-wave: '25'
+    destination:
+      namespace: gateway-api-test
+    source:
+      path: clusters/hub/components/gateway-api-test
+
