@@ -4,10 +4,19 @@ metadata:
   name: nginx-echo-headers
 spec:
   parentRefs:
-  - name: main
+  - group: gateway.networking.k8s.io	
+    kind: Gateway	
+    name: main
     namespace: openshift-ingress
   hostnames: ["nginx-echo-headers.gwapi.${CLUSTER_BASE_DOMAIN}"]
   rules:
   - backendRefs:
-    - name: nginx-echo-headers
-      port: 8080
+      - group: ''	
+        kind: Service	
+        name: nginx-echo-headers
+        port: 8080
+        weight: 1	
+    matches:	
+      - path:	
+          type: PathPrefix	
+          value: /
