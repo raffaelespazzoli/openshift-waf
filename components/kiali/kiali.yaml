@@ -4,7 +4,7 @@ metadata:
   name: kiali
   labels:
     app.kubernetes.io/part-of: istio
-    app.kubernetes.io/instance: istio-system
+    app.kubernetes.io/instance: openshift-gateway
     app.kubernetes.io/component: kiali
     app.kubernetes.io/name: kiali
 spec:
