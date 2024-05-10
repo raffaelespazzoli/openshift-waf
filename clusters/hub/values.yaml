@@ -49,7 +49,16 @@ applications:
     destination:
       namespace: openshift-ingress
     source:
-      path: components/gateway-api                      
+      path: components/gateway-api 
+
+  kiali:
+    annotations:
+      argocd.argoproj.io/compare-options: IgnoreExtraneous
+      argocd.argoproj.io/sync-wave: '15'
+    destination:
+      namespace: openshift-ingress
+    source:
+      path: components/kiali                           
                           
   openshift-servicemesh:
     annotations:
