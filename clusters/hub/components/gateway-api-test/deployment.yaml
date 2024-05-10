@@ -16,7 +16,6 @@ spec:
         app: nginx-echo-headers
         version: v1
     spec:
-      serviceAccountName: nginx-echo-headers
       containers:
       - image: brndnmtthws/nginx-echo-headers
         imagePullPolicy: IfNotPresent
