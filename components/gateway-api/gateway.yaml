@@ -6,13 +6,13 @@ metadata:
 spec:
   gatewayClassName: openshift-default
   listeners:
-  - name: plain-text
-    hostname: "*.gwapi.${CLUSTER_BASE_DOMAIN}"
-    port: 80
-    protocol: HTTP
-    allowedRoutes:
-      namespaces:
-        from: All
+  # - name: plain-text
+  #   hostname: "*.gwapi.${CLUSTER_BASE_DOMAIN}"
+  #   port: 80
+  #   protocol: HTTP
+  #   allowedRoutes:
+  #     namespaces:
+  #       from: All
   - name: encrypted
     protocol: HTTPS # Other possible value is `TLS`
     port: 443
