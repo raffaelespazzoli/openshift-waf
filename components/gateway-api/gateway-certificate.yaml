@@ -7,7 +7,7 @@ spec:
   secretName: gateway-api-certs
   duration: 168h0m0s
   renewBefore: 1h0m0s
-  commonName: 'a.gwapi.${CLUSTER_BASE_DOMAIN}'
+  commonName: '*.gwapi.${CLUSTER_BASE_DOMAIN}'
   usages:
     - server auth
   # At least one of a DNS Name, URI, or IP address is required.
