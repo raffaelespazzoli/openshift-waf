@@ -1,0 +1,22 @@
+apiVersion: gateway.networking.k8s.io/v1beta1
+kind: HTTPRoute
+metadata:
+  name: nginx-echo-headers-no-coraza
+spec:
+  parentRefs:
+  - group: gateway.networking.k8s.io	
+    kind: Gateway	
+    name: main-no-coraza
+    namespace: openshift-ingress
+  hostnames: ["nginx-echo-headers.gwapi-no-coraza.${CLUSTER_BASE_DOMAIN}"]
+  rules:
+  - backendRefs:
+      - group: ''	
+        kind: Service	
+        name: nginx-echo-headers
+        port: 8080
+        weight: 1	
+    matches:	
+      - path:	
+          type: PathPrefix	
+          value: /

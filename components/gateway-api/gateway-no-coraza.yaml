@@ -1,0 +1,27 @@
+apiVersion: gateway.networking.k8s.io/v1beta1
+kind: Gateway
+metadata:
+  name: main-no-coraza
+spec:
+  gatewayClassName: openshift-default
+  listeners:
+  # - name: plain-text
+  #   hostname: "*.gwapi.${CLUSTER_BASE_DOMAIN}"
+  #   port: 80
+  #   protocol: HTTP
+  #   allowedRoutes:
+  #     namespaces:
+  #       from: All
+  - name: encrypted
+    protocol: HTTPS # Other possible value is `TLS`
+    port: 443
+    hostname: "*.gwapi-no-coraza.${CLUSTER_BASE_DOMAIN}"
+    tls:
+      mode: Terminate # If protocol is `TLS`, `Passthrough` is a possible mode
+      certificateRefs:
+      - kind: Secret
+        group: ""
+        name: gateway-api-certs-no-coraza
+    allowedRoutes:
+      namespaces:
+        from: All                

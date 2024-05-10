@@ -7,4 +7,6 @@ resources:
   - ./gateway-class.yaml
   - ./gateway-certificate.yaml
   - ./coraza-plugin.yaml
+  - ./gateway-class-no-coraza.yaml
+  - ./gateway-certificate-no-coraza.yaml
   
