@@ -5,4 +5,5 @@ resources:
   - ./gateway.yaml
   - ./gateway-class.yaml
   - ./gateway-certificate.yaml
+  - ./coraza-plugin.yaml
   
